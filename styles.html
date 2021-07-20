@@ -6,6 +6,12 @@ html {
   color: $if(fontcolor)$$fontcolor$$else$#1a1a1a$endif$;
   background-color: $if(backgroundcolor)$$backgroundcolor$$else$#fdfdfd$endif$;
 }
+@media (prefers-color-scheme: dark) {
+  html {
+    color: $if(fontcolor-dark)$$fontcolor-dark$$else$#ffffff$endif$;
+    background-color: $if(backgroundcolor-dark)$$backgroundcolor-dark$$else$#000000$endif$;
+  }
+}
 body {
   margin: 0 auto;
   max-width: 36em;
@@ -47,6 +53,14 @@ a {
 a:visited {
   color: $if(linkcolor)$$linkcolor$$else$#1a1a1a$endif$;
 }
+@media (prefers-color-scheme: dark) {
+  a {
+    color: $if(linkcolor-dark)$$linkcolor-dark$$else$#1a1a1a$endif$;
+  }
+  a:visited {
+    color: $if(linkcolor-dark)$$linkcolor-dark$$else$#1a1a1a$endif$;
+  }
+}
 img {
   max-width: 100%;
 }
@@ -73,6 +87,11 @@ blockquote {
   border-left: 2px solid #e6e6e6;
   color: #606060;
 }
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    color: ##9f9f9f;
+  }
+}
 code {
   font-family: $if(monofont)$$monofont$$else$Menlo, Monaco, 'Lucida Console', Consolas, monospace$endif$;
 $if(monobackgroundcolor)$
@@ -82,6 +101,14 @@ $endif$
   font-size: 85%;
   margin: 0;
 }
+@media (prefers-color-scheme: dark) {
+  code {
+  $if(monobackgroundcolor-dark)$
+    background-color: $monobackgroundcolor-dark$;
+    padding: .2em .4em;
+  $endif$
+  }
+}
 pre {
   margin: 1em 0;
 $if(monobackgroundcolor)$
@@ -89,6 +116,14 @@ $if(monobackgroundcolor)$
   padding: 1em;
 $endif$
   overflow: auto;
+}
+@media (prefers-color-scheme: dark) {
+  pre {
+  $if(monobackgroundcolor-dark)$
+    background-color: $monobackgroundcolor-dark$;
+    padding: 1em;
+  $endif$
+  }
 }
 pre code {
   padding: 0;
@@ -104,6 +139,11 @@ hr {
   border: none;
   height: 1px;
   margin: 1em 0;
+}
+@media (prefers-color-scheme: dark) {
+  hr {
+    background-color: #e5e5e5;
+  }
 }
 table {
   margin: 1em 0;
@@ -121,9 +161,18 @@ tbody {
   border-top: 1px solid $if(fontcolor)$$fontcolor$$else$#1a1a1a$endif$;
   border-bottom: 1px solid $if(fontcolor)$$fontcolor$$else$#1a1a1a$endif$;
 }
+@media (prefers-color-scheme: dark) {
+  tbody {
+    border-top: 1px solid $if(fontcolor-dark)$$fontcolor-dark$$else$#1a1a1a$endif$;
+    border-bottom: 1px solid $if(fontcolor-dark)$$fontcolor-dark$$else$#1a1a1a$endif$;
+  }
+}
 th {
   border-top: 1px solid $if(fontcolor)$$fontcolor$$else$#1a1a1a$endif$;
   padding: 0.25em 0.5em 0.25em 0.5em;
+}
+@media (prefers-color-scheme: dark) {
+  border-top: 1px solid $if(fontcolor-dark)$$fontcolor-dark$$else$#1a1a1a$endif$;
 }
 td {
   padding: 0.125em 0.5em 0.25em 0.5em;
